@@ -1,0 +1,18 @@
+class Solution {
+    public int lastStoneWeight(int[] stones) {
+
+        int sl=stones.length;
+
+    if (sl == 1) {
+        return stones[0];
+    }
+    Arrays.sort(stones);
+    while (stones[sl - 2] != 0) {
+        stones[sl - 1] = stones[sl - 1] - stones[sl - 2];
+        stones[sl - 2] = 0;
+        Arrays.sort(stones);
+    }
+    return stones[sl - 1];
+}
+   
+}
