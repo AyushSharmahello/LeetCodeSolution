@@ -1,0 +1,19 @@
+//Python 
+
+class Solution(object):
+    def merge(self, nums1, m, nums2, n):
+        meradost =0
+        for x in range(len(nums1)):
+            if meradost>=n:
+                break
+            if nums1[x]==0:
+                nums1[x]=nums2[meradost]
+                meradost+=1           
+        nums1.sort()
+        """
+        :type nums1: List[int]
+        :type m: int
+        :type nums2: List[int]
+        :type n: int
+        :rtype: None Do not return anything, modify nums1 in-place instead.
+        """
